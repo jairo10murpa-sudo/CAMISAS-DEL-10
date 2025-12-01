@@ -1,165 +1,146 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CAMISAS DEL 10 – Estilo Boca Juniors</title>
-
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(180deg, #002f6c, #001b3c);
-            color: white;
-            text-align: center;
-        }
-
-        header {
-            background: #003696;
-            padding: 25px;
-            font-size: 32px;
-            font-weight: bold;
-            letter-spacing: 3px;
-            border-bottom: 5px solid #ffcc00;
-            text-shadow: 0px 0px 8px #000;
-        }
-
-        .banner {
-            padding: 50px 20px;
-            background-image: url('https://upload.wikimedia.org/wikipedia/commons/8/8c/La_Bombonera_panorama.jpg');
-            background-size: cover;
-            background-position: center;
-            color: #ffcc00;
-            text-shadow: 0px 0px 10px #000;
-            font-size: 40px;
-            font-weight: bold;
-            box-shadow: inset 0 0 80px #000;
-        }
-
-        .subtext {
-            margin-top: 10px;
-            font-size: 20px;
-            color: white;
-        }
-
-        .catalogo {
-            padding: 40px 20px;
-        }
-
-        .catalogo h2 {
-            font-size: 32px;
-            margin-bottom: 20px;
-            color: #ffcc00;
-            text-shadow: 0px 0px 8px #000;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            padding: 20px;
-        }
-
-        .item {
-            background: #00285e;
-            border: 2px solid #ffcc00;
-            border-radius: 12px;
-            padding: 20px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.5);
-            transition: 0.3s;
-        }
-
-        .item:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 25px rgba(255,204,0,0.7);
-        }
-
-        .item img {
-            width: 100%;
-            border-radius: 10px;
-        }
-
-        .btn {
-            display: block;
-            margin-top: 15px;
-            padding: 12px;
-            background: #ffcc00;
-            color: #000;
-            font-weight: bold;
-            border-radius: 10px;
-            text-decoration: none;
-            transition: 0.2s;
-        }
-
-        .btn:hover {
-            background: #ffd83a;
-        }
-
-        footer {
-            background: #001b3c;
-            padding: 15px;
-            border-top: 3px solid #ffcc00;
-            margin-top: 30px;
-        }
-
-        .whatsapp {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #25d366;
-            color: white;
-            padding: 15px 20px;
-            border-radius: 50px;
-            font-weight: bold;
-            text-decoration: none;
-            box-shadow: 0 0 15px #000;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Camisas del 10</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #00143b;
+      color: white;
+    }
+    header {
+      background: linear-gradient(90deg, #002561, #003b99);
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header img {
+      height: 70px;
+    }
+    .nav a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .nav a:hover {
+      color: #f1c40f;
+    }
+    .hero {
+      text-align: center;
+      padding: 100px 20px;
+      background: linear-gradient(180deg, #003b99, #00143b);
+    }
+    .hero h1 {
+      font-size: 55px;
+      font-weight: 900;
+      text-shadow: 0 0 15px #000;
+      color: #f1c40f;
+    }
+    .hero p {
+      font-size: 22px;
+      opacity: 0.9;
+    }
+    .catalogo {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      padding: 50px;
+    }
+    .item {
+      background: #002561;
+      padding: 20px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 0 15px rgba(0,0,0,0.4);
+      transition: 0.3s;
+    }
+    .item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 25px rgba(255,255,255,0.2);
+    }
+    .item img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 12px 20px;
+      background: #f1c40f;
+      color: #00143b;
+      font-weight: bold;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+    .btn:hover {
+      background: #ffdd4d;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #000a1f;
+      margin-top: 50px;
+      font-size: 14px;
+      color: #aaa;
+    }
+  </style>
 </head>
-
 <body>
 
-    <header>CAMISAS DEL 10</header>
+<header>
+  <img src="LOGO.png" alt="Logo Camisas del 10" />
+  <div class="nav">
+    <a href="#catalogo">Catálogo</a>
+    <a href="https://wa.me/593000000000">WhatsApp</a>
+  </div>
+</header>
 
-    <div class="banner">
-        Espíritu Xeneize • Pasión • Historia
-        <div class="subtext">Inspirado en Riquelme, hecho para campeones</div>
-    </div>
+<section class="hero">
+  <h1>CAMISAS DEL 10</h1>
+  <p>La casa oficial del estilo, la pasión y la mística del fútbol retro.</p>
+</section>
 
-    <section class="catalogo">
-        <h2>🔥 Catálogo de Camisetas</h2>
+<section id="catalogo" class="catalogo">
+  <div class="item">
+    <img src="boca-riquelme.jpg" />
+    <h3>Boca Juniors Riquelme 2007</h3>
+    <p>$29.99</p>
+    <a href="https://wa.me/593000000000" class="btn">Comprar</a>
+  </div>
+  <div class="item">
+    <img src="argentina-10.jpg" />
+    <h3>Argentina Retro #10</h3>
+    <p>$34.99</p>
+    <a href="https://wa.me/593000000000" class="btn">Comprar</a>
+  </div>
+  <div class="item">
+    <img src="barcelona-ronaldinho.jpg" />
+    <h3>Barcelona Ronaldinho 2005</h3>
+    <p>$32.99</p>
+    <a href="https://wa.me/593000000000" class="btn">Comprar</a>
+  </div>
+  <div class="item">
+    <img src="colombia-valderrama.jpg" />
+    <h3>Colombia Valderrama Retro</h3>
+    <p>$28.99</p>
+    <a href="https://wa.me/593000000000" class="btn">Comprar</a>
+  </div>
+</section>
 
-        <div class="grid">
-
-            <div class="item">
-                <img src="https://i.ibb.co/2v8VJrY/boca-2007.png" alt="Boca 2007">
-                <h3>Boca Juniors 2007</h3>
-                <p>$25</p>
-                <a class="btn" href="https://wa.me/593000000000?text=Hola%20quiero%20la%20camiseta%20Boca%202007">Comprar</a>
-            </div>
-
-            <div class="item">
-                <img src="https://i.ibb.co/LSdrTf1/boca-1998.png" alt="Boca 1998">
-                <h3>Boca Riquelme 1998</h3>
-                <p>$28</p>
-                <a class="btn" href="https://wa.me/593000000000?text=Hola%20quiero%20la%20camiseta%20Boca%201998">Comprar</a>
-            </div>
-
-            <div class="item">
-                <img src="https://i.ibb.co/Qn8Gr1s/boca-2003.png" alt="Boca 2003">
-                <h3>Boca Libertadores 2003</h3>
-                <p>$30</p>
-                <a class="btn" href="https://wa.me/593000000000?text=Hola%20quiero%20la%20camiseta%20Boca%202003">Comprar</a>
-            </div>
-
-        </div>
-    </section>
-
-    <a class="whatsapp" href="https://wa.me/593000000000">💬 WhatsApp</a>
-
-    <footer>
-        © 2025 CAMISAS DEL 10 – Inspirado en Boca y la magia del 10.
-    </footer>
+<footer>
+  © 2025 Camisas del 10 — Inspirado en la pasión xeneize.
+</footer>
 
 </body>
 </html>
