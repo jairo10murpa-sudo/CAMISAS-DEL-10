@@ -1,56 +1,251 @@
-<section class="bombonera-hero">
-  <div class="overlay"></div>
-  <h1 class="titulo">Tu Tienda Retro – Temporada 2025</h1>
-</section>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CAMISAS DEL 10 — Tienda</title>
+  <style>
+    :root{
+      --azul:#002561;
+      --azul-osc:#00143b;
+      --oro:#f1c40f;
+      --blanco:#fff;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: "Segoe UI", Roboto, Arial, sans-serif;
+      background:var(--azul-osc);
+      color:var(--blanco);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
 
-<style>
-  .bombonera-hero {
-    position: relative;
-    width: 100%;
-    height: 90vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    /* HEADER */
+    header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
+      padding:14px 22px;
+      background:linear-gradient(90deg,var(--azul),#003b99);
+      border-bottom:4px solid rgba(0,0,0,0.25);
+      position:sticky;
+      top:0;
+      z-index:50;
+    }
+    /* logo svg ya incluido en el HTML */
+    .nav a{
+      color:var(--blanco);
+      text-decoration:none;
+      margin-left:18px;
+      font-weight:700;
+      opacity:0.95;
+    }
+    .nav a:hover{color:var(--oro)}
 
-    /* Fondo estilo Bombonera sin foto real */
-    background: linear-gradient(
-        rgba(0, 0, 40, 0.9),
-        rgba(0, 0, 60, 0.95)
-      ),
-      radial-gradient(circle at center,
-        rgba(0,0,80,0.7) 0%,
-        rgba(0,0,30,1) 70%);
+    /* HERO: fondo la bombonera estilo, con overlay y siluetas en sombra */
+    .hero{
+      min-height:70vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:48px 20px;
+      background-image: url('https://images.unsplash.com/photo-1542623024-1b50f4b2f84b?auto=format&fit=crop&w=1600&q=80');
+      background-size:cover;
+      background-position:center;
+      position:relative;
+    }
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg, rgba(0,20,50,0.6), rgba(0,10,30,0.8));
+    }
+    .hero-inner{
+      position:relative;
+      z-index:2;
+      max-width:1100px;
+      width:100%;
+      padding:10px 20px;
+    }
+    .title{
+      font-size:48px;
+      line-height:1;
+      color:var(--oro);
+      font-weight:900;
+      margin:0 0 12px 0;
+      text-shadow:0 6px 20px rgba(0,0,0,0.6);
+    }
+    .subtitle{font-size:20px;opacity:0.95;margin:0 0 18px 0;color:#e7e7e7}
+    .cta{
+      display:inline-block;
+      background:var(--oro);
+      color:var(--azul-osc);
+      padding:14px 26px;
+      border-radius:10px;
+      text-decoration:none;
+      font-weight:800;
+      box-shadow:0 8px 30px rgba(241,196,15,0.18);
+    }
 
-    /* Patrón abstracto que simula graderías */
-    background-size: cover;
-  }
+    /* Siluetas en la parte inferior del hero (SVG embebido) */
+    .silhouettes{
+      position:absolute;
+      left:0;right:0;
+      bottom:0;
+      z-index:3;
+      display:flex;
+      justify-content:center;
+      pointer-events:none;
+      transform:translateY(20%);
+      opacity:0.95;
+    }
 
-  /* Siluetas abstractas de jugadores sin rostro */
-  .bombonera-hero::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 45%;
-    background: 
-      linear-gradient(to top, rgba(0,0,0,0.8), transparent),
-      url("data:image/svg+xml;utf8,
-      <svg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%' viewBox='0 0 1200 600' preserveAspectRatio='xMidYMid slice'>
-        <path d='M100 500 L200 300 L300 500 Z' fill='black' opacity='0.4'/>
-        <path d='M350 500 L450 280 L550 500 Z' fill='black' opacity='0.45'/>
-        <path d='M600 500 L700 310 L800 500 Z' fill='black' opacity='0.4'/>
-        <path d='M850 500 L950 290 L1050 500 Z' fill='black' opacity='0.43'/>
-      </svg>");
-    background-repeat: no-repeat;
-    background-position: bottom;
-    background-size: cover;
-  }
+    /* CATÁLOGO moderno */
+    .catalogo{
+      padding:56px 20px;
+      max-width:1200px;
+      margin:0 auto;
+    }
+    .catalogo h2{
+      color:var(--oro);
+      font-size:30px;
+      margin:0 0 18px 0;
+      text-align:center;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:22px;
+      margin-top:20px;
+    }
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+      border-radius:14px;
+      padding:14px;
+      text-align:center;
+      transition:transform .25s ease, box-shadow .25s ease;
+      border:1px solid rgba(255,255,255,0.04);
+    }
+    .card:hover{
+      transform:translateY(-8px);
+      box-shadow:0 20px 40px rgba(0,0,0,0.5);
+    }
+    .card img{width:100%;height:260px;object-fit:cover;border-radius:10px}
+    .card h3{margin:12px 0 6px 0;color:var(--oro);font-size:18px}
+    .card p{margin:0;color:#e7e7e7;font-weight:700}
+    .buy{display:inline-block;margin-top:10px;padding:10px 16px;background:var(--oro);color:var(--azul-osc);border-radius:10px;font-weight:800;text-decoration:none}
 
-  .titulo {
-    font-size: 3.5rem;
-    color: #ffd200;
-    font-weight: 900;
-    text-shadow: 0 4px 20px rgba(0,0,0,0.8);
-    z-index: 10;
-  }
-</style>
+    /* WhatsApp flotante */
+    .wa{
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      background:#25d366;
+      color:#063;
+      padding:14px 16px;
+      border-radius:50px;
+      box-shadow:0 6px 28px rgba(0,0,0,0.45);
+      font-weight:900;
+      text-decoration:none;
+      z-index:60;
+    }
+
+    footer{padding:18px;text-align:center;color:#bbb;background:linear-gradient(180deg,#000a14,transparent)}
+    @media (max-width:720px){
+      .title{font-size:34px}
+      .hero{min-height:60vh;padding:36px 14px}
+      .card img{height:200px}
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <!-- LOGO SVG inline: no dependes de archivo externo -->
+    <div style="display:flex;align-items:center;gap:12px">
+      <svg width="78" height="78" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#f1c40f"/><stop offset="1" stop-color="#ffd24d"/></linearGradient></defs>
+        <path d="M10 20 L90 20 L80 85 L50 95 L20 85 Z" fill="#032f64" stroke="url(#g)" stroke-width="3"/>
+        <text x="50" y="48" fill="url(#g)" font-size="14" font-weight="800" text-anchor="middle" font-family="Segoe UI, Roboto, Arial">10</text>
+      </svg>
+      <div style="font-weight:900;font-size:18px;color:var(--oro)">CAMISAS DEL 10</div>
+    </div>
+
+    <nav class="nav">
+      <a href="#catalogo">Catálogo</a>
+      <a href="#contacto">Contacto</a>
+      <a href="https://wa.me/593000000000" target="_blank" rel="noopener">WhatsApp</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-hidden="false">
+      <div class="hero-inner">
+        <h1 class="title">CAMISAS DEL 10</h1>
+        <p class="subtitle">Ediciones premium • Edición limitada • Envíos a todo el país</p>
+        <a class="cta" href="#catalogo">Ver catálogo</a>
+      </div>
+
+      <!-- Siluetas en sombras: SVG embebido (no personas reconocibles) -->
+      <div class="silhouettes" aria-hidden="true">
+        <svg width="100%" viewBox="0 0 1200 220" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="sg" x1="0" x2="0" y1="0" y2="1">
+              <stop offset="0%" stop-color="rgba(0,0,0,0.0)"/>
+              <stop offset="30%" stop-color="rgba(0,0,0,0.0)"/>
+              <stop offset="100%" stop-color="rgba(0,0,0,0.9)"/>
+            </linearGradient>
+          </defs>
+          <!-- fondo oscuro -->
+          <rect width="1200" height="220" fill="url(#sg)"/>
+          <!-- cuatro siluetas simples (estilizadas) -->
+          <g fill="#02040a">
+            <path d="M120 200 C140 150, 160 130, 200 120 L230 110 L260 120 C300 130, 320 150, 340 200 Z"/>
+            <path d="M420 200 C440 150, 460 130, 500 120 L530 110 L560 120 C600 130, 620 150, 640 200 Z"/>
+            <path d="M720 200 C740 150, 760 130, 800 120 L830 110 L860 120 C900 130, 920 150, 940 200 Z"/>
+            <path d="M1020 200 C1040 150, 1060 130, 1100 120 L1130 110 L1160 120 C1200 130, 1220 150, 1240 200 Z"/>
+          </g>
+        </svg>
+      </div>
+    </section>
+
+    <section id="catalogo" class="catalogo" aria-labelledby="cat">
+      <h2 id="cat">Catálogo destacado</h2>
+      <div class="grid">
+        <!-- Ejemplos: cambia las URLs por tus imágenes reales subidas al repo -->
+        <article class="card">
+          <img alt="Boca Riquelme 1998" src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=1200&q=80">
+          <h3>Boca Riquelme 1998</h3>
+          <p>$29.99</p>
+          <a class="buy" href="https://wa.me/593000000000?text=Hola%2C%20quiero%20la%20Boca%20Riquelme%201998">Comprar</a>
+        </article>
+
+        <article class="card">
+          <img alt="Argentina Retro" src="https://images.unsplash.com/photo-1518085250887-1a2d3b3e3b9b?auto=format&fit=crop&w=1200&q=80">
+          <h3>Argentina Retro #10</h3>
+          <p>$34.99</p>
+          <a class="buy" href="https://wa.me/593000000000?text=Hola%2C%20quiero%20la%20Argentina%20Retro%20%2310">Comprar</a>
+        </article>
+
+        <article class="card">
+          <img alt="Camiseta Clasica" src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=1200&q=80">
+          <h3>Boca Libertadores 2003</h3>
+          <p>$32.99</p>
+          <a class="buy" href="https://wa.me/593000000000?text=Hola%2C%20quiero%20la%20Boca%20Libertadores%202003">Comprar</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <a class="wa" href="https://wa.me/593000000000" target="_blank" rel="noopener">💬 WhatsApp</a>
+
+  <footer id="contacto">
+    <div>© 2025 CAMISAS DEL 10 · Hecho con pasión</div>
+    <div style="font-size:13px;color:#9aa">Visítanos en Instagram @camisasdel10</div>
+  </footer>
+
+</body>
+</html>
