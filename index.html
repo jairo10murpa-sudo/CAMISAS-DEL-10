@@ -1,146 +1,56 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Camisas del 10</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #00143b;
-      color: white;
-    }
-    header {
-      background: linear-gradient(90deg, #002561, #003b99);
-      padding: 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    header img {
-      height: 70px;
-    }
-    .nav a {
-      color: white;
-      margin-left: 20px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-    .nav a:hover {
-      color: #f1c40f;
-    }
-    .hero {
-      text-align: center;
-      padding: 100px 20px;
-      background: linear-gradient(180deg, #003b99, #00143b);
-    }
-    .hero h1 {
-      font-size: 55px;
-      font-weight: 900;
-      text-shadow: 0 0 15px #000;
-      color: #f1c40f;
-    }
-    .hero p {
-      font-size: 22px;
-      opacity: 0.9;
-    }
-    .catalogo {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 25px;
-      padding: 50px;
-    }
-    .item {
-      background: #002561;
-      padding: 20px;
-      border-radius: 15px;
-      text-align: center;
-      box-shadow: 0 0 15px rgba(0,0,0,0.4);
-      transition: 0.3s;
-    }
-    .item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 25px rgba(255,255,255,0.2);
-    }
-    .item img {
-      width: 100%;
-      border-radius: 10px;
-    }
-    .btn {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 12px 20px;
-      background: #f1c40f;
-      color: #00143b;
-      font-weight: bold;
-      border-radius: 10px;
-      text-decoration: none;
-      transition: 0.2s;
-    }
-    .btn:hover {
-      background: #ffdd4d;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #000a1f;
-      margin-top: 50px;
-      font-size: 14px;
-      color: #aaa;
-    }
-  </style>
-</head>
-<body>
-
-<header>
-  <img src="LOGO.png" alt="Logo Camisas del 10" />
-  <div class="nav">
-    <a href="#catalogo">Catálogo</a>
-    <a href="https://wa.me/593000000000">WhatsApp</a>
-  </div>
-</header>
-
-<section class="hero">
-  <h1>CAMISAS DEL 10</h1>
-  <p>La casa oficial del estilo, la pasión y la mística del fútbol retro.</p>
+<section class="bombonera-hero">
+  <div class="overlay"></div>
+  <h1 class="titulo">Tu Tienda Retro – Temporada 2025</h1>
 </section>
 
-<section id="catalogo" class="catalogo">
-  <div class="item">
-    <img src="boca-riquelme.jpg" />
-    <h3>Boca Juniors Riquelme 2007</h3>
-    <p>$29.99</p>
-    <a href="https://wa.me/593000000000" class="btn">Comprar</a>
-  </div>
-  <div class="item">
-    <img src="argentina-10.jpg" />
-    <h3>Argentina Retro #10</h3>
-    <p>$34.99</p>
-    <a href="https://wa.me/593000000000" class="btn">Comprar</a>
-  </div>
-  <div class="item">
-    <img src="barcelona-ronaldinho.jpg" />
-    <h3>Barcelona Ronaldinho 2005</h3>
-    <p>$32.99</p>
-    <a href="https://wa.me/593000000000" class="btn">Comprar</a>
-  </div>
-  <div class="item">
-    <img src="colombia-valderrama.jpg" />
-    <h3>Colombia Valderrama Retro</h3>
-    <p>$28.99</p>
-    <a href="https://wa.me/593000000000" class="btn">Comprar</a>
-  </div>
-</section>
+<style>
+  .bombonera-hero {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-<footer>
-  © 2025 Camisas del 10 — Inspirado en la pasión xeneize.
-</footer>
+    /* Fondo estilo Bombonera sin foto real */
+    background: linear-gradient(
+        rgba(0, 0, 40, 0.9),
+        rgba(0, 0, 60, 0.95)
+      ),
+      radial-gradient(circle at center,
+        rgba(0,0,80,0.7) 0%,
+        rgba(0,0,30,1) 70%);
 
-</body>
-</html>
+    /* Patrón abstracto que simula graderías */
+    background-size: cover;
+  }
+
+  /* Siluetas abstractas de jugadores sin rostro */
+  .bombonera-hero::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 45%;
+    background: 
+      linear-gradient(to top, rgba(0,0,0,0.8), transparent),
+      url("data:image/svg+xml;utf8,
+      <svg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%' viewBox='0 0 1200 600' preserveAspectRatio='xMidYMid slice'>
+        <path d='M100 500 L200 300 L300 500 Z' fill='black' opacity='0.4'/>
+        <path d='M350 500 L450 280 L550 500 Z' fill='black' opacity='0.45'/>
+        <path d='M600 500 L700 310 L800 500 Z' fill='black' opacity='0.4'/>
+        <path d='M850 500 L950 290 L1050 500 Z' fill='black' opacity='0.43'/>
+      </svg>");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+  }
+
+  .titulo {
+    font-size: 3.5rem;
+    color: #ffd200;
+    font-weight: 900;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.8);
+    z-index: 10;
+  }
+</style>
